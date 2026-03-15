@@ -1,0 +1,24 @@
+name: realtime_support_inbox_assessment
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.4
+  equatable: ^2.0.5
+  get: ^4.6.6
+  http: ^1.2.1
+  web_socket_channel: ^2.4.0
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
