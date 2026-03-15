@@ -1,16 +1,53 @@
-# app
+# Realtime Support Inbox
 
-A new Flutter project.
+## Setup
 
-## Getting Started
+1. Install dependencies
 
-This project is a starting point for a Flutter application.
+flutter pub get
 
-A few resources to get you started if this is your first Flutter project:
+2. Run backend mock server
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+cd backend
+npm install
+npm start
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Run Flutter app
+
+flutter run
+
+---
+
+## Architecture
+
+The project uses a mixed architecture as provided in the starter code:
+
+- BLoC for Inbox state management
+- GetX for routing
+- Repository layer for API abstraction
+- WebSocket adapter for realtime updates
+
+### Key Layers
+
+UI
+↓
+BLoC
+↓
+Repository
+↓
+API Client / WebSocket Client
+
+---
+
+## Design Decisions
+
+- Used BLoC for inbox because realtime events update global state
+- Conversation screen kept lightweight using StatefulWidget
+- Realtime adapter decouples WebSocket events from UI
+
+---
+
+## Tradeoffs
+
+- Optimistic message sending simplified
+- Retry state implemented minimally for assessment timebox
